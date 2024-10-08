@@ -24,3 +24,8 @@ class TestRecoverPassword:
         #driver.find_element(*Locators.CODE_FROM_LETTER).send_keys("______")
 # Кликнуть по кнопке «Сохранить»
         #driver.find_element(*Locators.SAVE_BUTTON).click()
+#Явное ожидание входа на главную страницу
+        #WebDriverWait(driver,10).until(expected_conditions.visibility_of_element_located(Locators.YOUR_ORDER))
+#Проверка что зашла на страницу
+        #your_order_text = driver.find_element(*Locators.YOUR_ORDER).text
+        #assert your_order_text == "Оформить заказ"
