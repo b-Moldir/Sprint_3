@@ -1,21 +1,21 @@
 import pytest
-from selenium.webdriver.chrome import webdriver
-
+from selenium import webdriver
 
 
 @pytest.fixture()
 def valid_credentials():
     return {
-        "имя": "Жанна",
-        "email": "hello93@mail.ru",
+        "name": "Молдир",
+        "email": "moldirbektenova11555@yandex.ru",
         "password": "123456"
     }
+
 
 @pytest.fixture()
 def invalid_credentials():
     return {
-        "имя": "Жанна",
-        "email": "hello93@mail.ru",
+        "name": "Молдир",
+        "email": "moldirbektenova11555@yandex.ru",
         "password": "123"
     }
 
