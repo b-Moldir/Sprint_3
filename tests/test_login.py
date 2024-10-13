@@ -2,13 +2,12 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
 from element_to_find import Locators
 from data import VALID_CREDENTIALS as vc
-from data import get_driver
+
 
 
 
 class TestLoginPersonalAccount:
-    def test_login_to_account(self):
-        driver = get_driver()
+    def test_login_to_account(self, driver):
         # Вход по кнопке «Войти в аккаунт» на главной
         WebDriverWait(driver, 20).until(
             expected_conditions.text_to_be_present_in_element(Locators.LOGIN_BUTTON, "Войти в аккаунт"))
@@ -27,8 +26,7 @@ class TestLoginPersonalAccount:
         your_order_text = driver.find_element(*Locators.YOUR_ORDER).text
         assert your_order_text == "Оформить заказ"
 
-    def test_personal_account(self):
-        driver = get_driver()
+    def test_personal_account(self, driver):
         #Вход по кнопке «Личный кабинет» на главной
         driver.find_element(*Locators.PERSONAL_ACCOUNT).click()
         #Явное ожидание появление надписи "Вход"
@@ -44,8 +42,7 @@ class TestLoginPersonalAccount:
         your_order_text = driver.find_element(*Locators.YOUR_ORDER).text
         assert your_order_text == "Оформить заказ"
 
-    def test_registration_form(self):
-        driver = get_driver()
+    def test_registration_form(self, driver):
         # Вход по кнопке «Войти в аккаунт» на главной
         WebDriverWait(driver, 20).until(
                 expected_conditions.text_to_be_present_in_element(Locators.LOGIN_BUTTON, "Войти в аккаунт"))
@@ -71,8 +68,7 @@ class TestLoginPersonalAccount:
         your_order_text = driver.find_element(*Locators.YOUR_ORDER).text
         assert your_order_text == "Оформить заказ"
 
-    def test_login_recover_password(self):
-        driver = get_driver()
+    def test_login_recover_password(self, driver):
         # Вход по кнопке «Войти в аккаунт» на главной
         WebDriverWait(driver, 20).until(
             expected_conditions.text_to_be_present_in_element(Locators.LOGIN_BUTTON, "Войти в аккаунт"))

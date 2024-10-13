@@ -3,12 +3,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from element_to_find import Locators
 from helpers import generate_email
 from data import VALID_CREDENTIALS as vc
-from data import get_driver
+
 
 
 class TestSuccessfulRegistration:
-    def test_registration(self):
-        driver = get_driver()
+    def test_registration(self, driver):
         registration_email = generate_email()
         #Вход по кнопке «Войти в аккаунт» на главной
         WebDriverWait(driver, 20).until(

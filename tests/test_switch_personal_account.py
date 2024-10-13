@@ -4,12 +4,11 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
 from element_to_find import Locators
 from data import VALID_CREDENTIALS as vc
-from data import get_driver
+
 
 
 class TestSwitchPersonalAccount:
-    def test_switch_personal_account(self):
-        driver = get_driver()
+    def test_switch_personal_account(self, driver):
         # Вход по кнопке «Войти в аккаунт» на главной
         WebDriverWait(driver, 20).until(
             expected_conditions.text_to_be_present_in_element(Locators.LOGIN_BUTTON, "Войти в аккаунт"))

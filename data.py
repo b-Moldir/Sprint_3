@@ -13,7 +13,3 @@ INVALID_CREDENTIALS = {
 }
 
 
-def get_driver():
-    driver = webdriver.Chrome()
-    driver.get("https://stellarburgers.nomoreparties.site/")
-    return driver

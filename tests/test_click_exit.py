@@ -2,12 +2,11 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from element_to_find import Locators
 from data import VALID_CREDENTIALS as vc
-from data import get_driver
+
 
 
 class TestClickExit:
-    def test_click_exit(self):
-        driver = get_driver()
+    def test_click_exit(self,driver):
         # Вход по кнопке «Войти в аккаунт» на главной
         WebDriverWait(driver, 20).until(expected_conditions.text_to_be_present_in_element(Locators.LOGIN_BUTTON, "Войти в аккаунт"))
         driver.find_element(*Locators.LOGIN_BUTTON).click()
